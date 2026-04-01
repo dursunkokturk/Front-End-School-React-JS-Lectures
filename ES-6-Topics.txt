@@ -1,0 +1,11 @@
+Let / Const
+Let keyword kullanarak tanimlanan degiskenlere atanan degerler degistirebilir durumdadir.
+Const keyword kullanarak tanimlanan degiskenlere atanan degerler degistilemez durumdadir.
+
+Arrow Function
+React'ta Event Handler, map, filter islemleri her zaman Arrow Function ile yazilir
+
+Destructuring
+Spread
+Template Literals
+Import / Export
