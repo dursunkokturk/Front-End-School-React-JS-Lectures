@@ -17,3 +17,35 @@ document.body.innerText = name;
 sayHello();
 sayHi()
 notification();
+
+
+
+
+
+const user1 = {
+  firstName: "Dursun",
+  lastName: null
+}
+
+/*  ?? Isaretinden Once Belirtilen Degisken Obje Icinde Varsa
+    Degiskene Atanan Degeri Yazdiriyoruz */
+/*  ?? Isaretinden Once Belirtilen Degisken Obje Icinde Yoksa 
+    ?? Isaretinden Sonra Belirtilen
+    Degeri Yazdiriyoruz */
+
+// || null - undefined - 0 - empty - string '' - false - NaN
+console.log(user1.lastName ?? "Köktürk");
+
+const user2 = {
+  firstName: "Dursun",
+  lastName: null
+}
+
+/*  || Isaretinden Once Belirtilen Degisken Obje Icinde Varsa
+    Degiskene Atanan Degeri Yazdiriyoruz */
+/*  || Isaretinden Once Belirtilen Degisken Obje Icinde Yoksa 
+    || Isaretinden Sonra Belirtilen
+    Degeri Yazdiriyoruz */
+
+// || null - undefined - 0 - empty - string '' - false - NaN
+console.log(user2.lastName ?? "Köktürk");
