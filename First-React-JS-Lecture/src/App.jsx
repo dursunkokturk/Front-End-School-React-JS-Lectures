@@ -23,12 +23,19 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   function handleIncrease() {
-    setCount(count + 1);
+    setCount(count + 1)
+  }
+
+  function handleDecrease() {
+    setCount(count - 1)
   }
 
   return (
     <>
-      <button onClick={handleIncrease}>Tıkla</button>
+      {/* <button onClick={handleIncrease}>Tıkla {count}</button> */}
+      <button onClick={handleDecrease} disabled={count === 0}>-</button>
+      <button>Sayaç {count}</button>
+      <button onClick={handleIncrease}>+</button>
     </>
   )
 }
