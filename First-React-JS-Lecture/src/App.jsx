@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Hi from "./assets/Components/Hi";
+import MyApp from "./assets/Components/MyApp";
 
 export default function App() {
   const isLogin = true;
@@ -11,6 +13,8 @@ export default function App() {
       {/* <Login /> */}
       {isLogin ? <Admin /> : <Login />}
       <Counter />
+      <Hi />
+      <MyApp />
     </>
   )
 }
