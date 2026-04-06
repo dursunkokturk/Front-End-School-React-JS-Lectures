@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Hi from "./assets/Components/Hi";
 
 export default function App() {
   const isLogin = true;
@@ -9,6 +10,7 @@ export default function App() {
       <Profile />
       {isLogin ? <Admin /> : <Login />}
       <Counter />
+      <Hi />
     </>
   )
 }
