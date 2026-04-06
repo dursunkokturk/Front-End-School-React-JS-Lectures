@@ -1,11 +1,14 @@
+import { useState } from "react";
+
 export default function App() {
-  const isLogin = false;
+  const isLogin = true;
   return (
     <>
       <h1>Hello React World</h1>
       <MyButton />
       <Profile />
       {isLogin ? <Admin /> : <Login />}
+      <Counter />
     </>
   )
 }
@@ -63,4 +66,29 @@ function Profile() {
       />
     </>
   );
+}
+
+function Counter() {
+
+  // count : Yapilacak Islemin Atandigi Degisken
+  // setCount : count Degiskeni Uzerinden Yapilan Islemin Guncel Halini Barindiran Kisim
+  // useState : count Degiskeninin Baslangic Degerini Barindiran Hook
+  const [count, setCount] = useState(0);
+
+  function handleIncrease() {
+    setCount(count + 1)
+  }
+
+  function handleDecrease() {
+    setCount(count - 1)
+  }
+
+  return (
+    <>
+      {/* <button onClick={handleIncrease}>Tıkla {count}</button> */}
+      <button onClick={handleDecrease} disabled={count === 0}>-</button>
+      <button>Sayaç {count}</button>
+      <button onClick={handleIncrease}>+</button>
+    </>
+  )
 }
