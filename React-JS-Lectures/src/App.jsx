@@ -36,22 +36,22 @@ export default function App() {
     }
   ];
 
-  {/* */}
-  
+  {/* */ }
+
   {/* 
     // useEffect Genel Kullanimi
     useEffect(()=>{
       // Yapilacak Islemlerin Yazilacagi Alan
     })
   */}
-  
+
   {/* 
     // Her Zaman Calisir
     useEffect(()=>{
       
     })
   */}
-  
+
   {/* 
     // Sadece Sayfa Ilk Calistirildinda Calisir
     // dependency Bos
@@ -67,6 +67,11 @@ export default function App() {
 
     }, [x])
   */}
+
+  // useEffect Genel Kullanimi
+  useEffect(() => {
+    console.log("useEffect Hook Kullanımı")
+  })
 
   return (
     <>
