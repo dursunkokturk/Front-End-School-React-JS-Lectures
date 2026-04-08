@@ -87,11 +87,16 @@ export default function App() {
     document.title = title ? `Uygulama Adı : ${title}` : `React Uygulaması`;
   }, [title])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('https://dummyjson.com/recipes')
-    .then(response=>response.json())
-    .then(console.log)
-  })
+      .then(response => response.json())
+
+      // Api Uzerinden Gelen Cevabi Console Ekraninda Kontrol Ediyoruz 
+      // .then(console.log)
+      .then((data) => {
+        setRecipes(data.recipes);
+      })
+  },[])
 
   return (
     <>
@@ -161,6 +166,18 @@ export default function App() {
         placeholder="Uygulama Başlığı Giriniz"
         onChange={(e) => setTitle(e.target.value)}
       />
+
+      <br />
+      <br />
+      <br />
+
+      {recipes.map((recipe) => (
+        <div key={recipe.id}>
+          <h4>{recipe.name}</h4>
+          <p>Tarif: {recipe.ingredients}</p>
+          <p>{recipe.cuisine}</p>
+        </div>
+      ))}
     </>
   )
 }
