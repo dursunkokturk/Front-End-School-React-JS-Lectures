@@ -12,6 +12,7 @@ export default function App() {
 
   const [theme, setTheme] = useState('light');
   const [text, setText] = useState('');
+  const [isVisible, setVisible] = useState(false);
 
   document.body.className = theme;
 
@@ -41,13 +42,23 @@ export default function App() {
       <br />
       <br />
       <br />
-      <input 
-        type="text" 
-        placeholder="Bir Şey Yazabilirsiniz" 
+      <input
+        type="text"
+        placeholder="Bir Şey Yazabilirsiniz"
         value={text}
-        onChange={(e) => setText(e.target.value)} 
+        onChange={(e) => setText(e.target.value)}
       />
       <p>Yazdığınız Yazı : {text}</p>
+      <br />
+      <br />
+      <br />
+      <button onClick={() => setVisible(!isVisible)}>{isVisible ? 'Göster' : 'Gizle'}</button>
+        {
+          isVisible && <p>Merhaba Ben Görünüyorum</p>
+        }
+      <br />
+      <br />
+      <br />
     </>
   )
 }
