@@ -73,6 +73,12 @@ export default function App() {
     console.log("useEffect Hook Kullanımı")
   })
 
+  // useEffect ve Dependency Birlikte Kullanimi Sonucunda
+  // Sadece Bir Kez Calisacak
+  useEffect(() => {
+    console.log("useEffect Hook ve Dependency Kullanımı")
+  },[])
+
   return (
     <>
       <button onClick={toggleTheme}>
