@@ -4,8 +4,28 @@ import MyApp from "./assets/Components/MyApp";
 
 export default function App() {
   const isLogin = true;
+
+  // state : mevcut değer
+  // setState : değeri güncelleyen fonksiyon
+  // initialValue : başlangıç değeri (sayı, string, bool, array, obj olabilir)
+  // const [state, setState] = useState(initialValue);
+
+  const [theme, setTheme] = useState('light');
+
+  document.body.className = theme;
+
+  function toggleTheme() {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+
+    document.body.className = newTheme;
+  }
+
   return (
     <>
+      <button onClick={toggleTheme}>
+        {theme === 'light' ? 'Dark Mode a Geç' : 'Light Mode a Geç'}
+      </button>
       <h1>Hello React World</h1>
       <MyButton />
       <Profile />
