@@ -24,6 +24,17 @@ export default function App() {
   }
 
   const fruits = ["elma", "armut", "çilek", "karpuz", "kavun"];
+  const fruits2 = [
+    {
+      id: 1, name: "Ejder Meyvesi"
+    },
+    {
+      id: 2, name: "Tropikal Meyve"
+    },
+    {
+      id: 3, name: "Üzüm"
+    }
+  ];
 
   return (
     <>
@@ -68,8 +79,15 @@ export default function App() {
         Index Degerini Kullaniyoruz  */}
       <ul>
         {
-          fruits.map((fruit,i)=>(
+          fruits.map((fruit, i) => (
             <li key={i}>{fruit}</li>
+          ))
+        }
+      </ul>
+      <ul>
+        {
+          fruits2.map((fruits2) => (
+            <li key={fruits2.id}>{fruits2.name}</li>
           ))
         }
       </ul>
