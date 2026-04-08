@@ -17,6 +17,7 @@ import UseEffectConsoleLog from "./assets/Components/UseEffect/UseEffectConsoleL
 import UseEffectDependencies from "./assets/Components/UseEffect/UseEffectDependencies";
 import UseEffectDependenciesTitleChange from "./assets/Components/UseEffect/UseEffectDependenciesTitleChange";
 import UseEffectApi from "./assets/Components/UseEffect/UseEffectApi";
+import UseEffectProducts from "./assets/Components/UseEffect/UseEffectProducts";
 
 export default function App() {
 
@@ -124,7 +125,18 @@ export default function App() {
       <br />
       <br />
       <UseEffectDependenciesTitleChange />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <UseEffectApi />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <UseEffectProducts />
     </>
   )
 }
