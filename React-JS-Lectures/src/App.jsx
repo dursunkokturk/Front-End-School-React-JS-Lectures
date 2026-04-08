@@ -37,7 +37,7 @@ export default function App() {
     }
   ];
 
-  {/* */ }
+  const [recipes, setRecipes] = useState([]);
 
   {/* 
     // useEffect Genel Kullanimi
@@ -85,7 +85,13 @@ export default function App() {
     Kullanicidan Data Alindi Ise Title Alanina Yaziyi Degistiriyoruz */}
   useEffect(() => {
     document.title = title ? `Uygulama Adı : ${title}` : `React Uygulaması`;
-  },[title])
+  }, [title])
+
+  useEffect(()=>{
+    fetch('https://dummyjson.com/recipes')
+    .then(response=>response.json())
+    .then(console.log)
+  })
 
   return (
     <>
@@ -150,10 +156,10 @@ export default function App() {
       {/* Web Sayfasinda Title Alanindaki Yaziyi Degistirmek Icin 
         Kullanicidan Data Alinma Durumuna Gore 
         Title Alanindaki Yaziyi Degistiriyoruz */}
-      <input 
-        type="text" 
-        placeholder="Uygulama Başlığı Giriniz" 
-        onChange={(e)=>setTitle(e.target.value)}
+      <input
+        type="text"
+        placeholder="Uygulama Başlığı Giriniz"
+        onChange={(e) => setTitle(e.target.value)}
       />
     </>
   )
