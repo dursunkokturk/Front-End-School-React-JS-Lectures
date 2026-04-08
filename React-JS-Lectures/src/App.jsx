@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Hi from "./assets/Components/Hi";
 import MyApp from "./assets/Components/MyApp";
 
@@ -35,6 +35,38 @@ export default function App() {
       id: 3, name: "Üzüm"
     }
   ];
+
+  {/* */}
+  
+  {/* 
+    // useEffect Genel Kullanimi
+    useEffect(()=>{
+      // Yapilacak Islemlerin Yazilacagi Alan
+    })
+  */}
+  
+  {/* 
+    // Her Zaman Calisir
+    useEffect(()=>{
+      
+    })
+  */}
+  
+  {/* 
+    // Sadece Sayfa Ilk Calistirildinda Calisir
+    // dependency Bos
+    useEffect(() => {
+
+    }, [])
+  */}
+
+  {/* 
+    // dependency Uzerinden 
+    // Kullanicidan Gelen Data Degistigi Surece Calisir
+    useEffect(() => {
+
+    }, [x])
+  */}
 
   return (
     <>
