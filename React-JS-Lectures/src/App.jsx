@@ -11,6 +11,7 @@ export default function App() {
   // const [state, setState] = useState(initialValue);
 
   const [theme, setTheme] = useState('light');
+  const [text, setText] = useState('');
 
   document.body.className = theme;
 
@@ -33,7 +34,20 @@ export default function App() {
       <Counter />
       <Hi />
       <MyApp />
+      <br />
+      <br />
+      <br />
       <Counter1 />
+      <br />
+      <br />
+      <br />
+      <input 
+        type="text" 
+        placeholder="Bir Şey Yazabilirsiniz" 
+        value={text}
+        onChange={(e) => setText(e.target.value)} 
+      />
+      <p>Yazdığınız Yazı : {text}</p>
     </>
   )
 }
