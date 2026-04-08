@@ -13,6 +13,7 @@ export default function App() {
   const [theme, setTheme] = useState('light');
   const [text, setText] = useState('');
   const [isVisible, setVisible] = useState(false);
+  const [title, setTitle] = useState('');
 
   document.body.className = theme;
 
@@ -77,7 +78,14 @@ export default function App() {
   // Sadece Bir Kez Calisacak
   useEffect(() => {
     console.log("useEffect Hook ve Dependency Kullanımı")
-  },[])
+  }, [])
+
+  {/* Web Sayfasinda Title Alanindaki Yaziyi Degistirmek Icin 
+    Kullanicidan Data Alinmadi Ise Belirlenen Yaziyi Yazdiriyoruz 
+    Kullanicidan Data Alindi Ise Title Alanina Yaziyi Degistiriyoruz */}
+  useEffect(() => {
+    document.title = title ? `Uygulama Adı : ${title}` : `React Uygulaması`;
+  },[title])
 
   return (
     <>
@@ -134,6 +142,19 @@ export default function App() {
           ))
         }
       </ul>
+
+      <br />
+      <br />
+      <br />
+
+      {/* Web Sayfasinda Title Alanindaki Yaziyi Degistirmek Icin 
+        Kullanicidan Data Alinma Durumuna Gore 
+        Title Alanindaki Yaziyi Degistiriyoruz */}
+      <input 
+        type="text" 
+        placeholder="Uygulama Başlığı Giriniz" 
+        onChange={(e)=>setTitle(e.target.value)}
+      />
     </>
   )
 }
