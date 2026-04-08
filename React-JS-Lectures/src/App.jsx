@@ -23,6 +23,8 @@ export default function App() {
     document.body.className = newTheme;
   }
 
+  const fruits = ["elma", "armut", "çilek", "karpuz", "kavun"];
+
   return (
     <>
       <button onClick={toggleTheme}>
@@ -53,12 +55,24 @@ export default function App() {
       <br />
       <br />
       <button onClick={() => setVisible(!isVisible)}>{isVisible ? 'Göster' : 'Gizle'}</button>
+      {
+        isVisible && <p>Merhaba Ben Görünüyorum</p>
+      }
+      <br />
+      <br />
+      <br />
+
+      {/* Array Icindeki Data'lari Yazdirirken 
+        Key Hatasi Almamak Icin 
+        Array Icindeki Data'lari Yazdirirken 
+        Index Degerini Kullaniyoruz  */}
+      <ul>
         {
-          isVisible && <p>Merhaba Ben Görünüyorum</p>
+          fruits.map((fruit,i)=>(
+            <li key={i}>{fruit}</li>
+          ))
         }
-      <br />
-      <br />
-      <br />
+      </ul>
     </>
   )
 }
